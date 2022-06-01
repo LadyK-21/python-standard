@@ -10,7 +10,7 @@ This is a **Python** application, with basic unit tests, for which coverage is u
 
 ## Configuration
 
-This project is written in `Python 3.6`. Unit tests are written with the `pytest` framework and coverage reports are generated using the `pytest-cov` plugin.
+This project is written in `Python 3.9`. Unit tests are written with the `pytest` framework and coverage reports are generated using the `pytest-codecov` plugin.
 
 Unit tests: `/test_index.py`
 
@@ -18,9 +18,9 @@ Inside `.travis.yml` file:
 ```yaml
 install:
   - pip install codecov
-  - pip install pytest-cov
+  - pip install pytest-codecov
 script:
-  - pytest --cov=./ --cov-report=xml
+  - pytest --codecov=./ --codecov-report=xml
   - codecov
 ```
 
@@ -33,7 +33,7 @@ docker-compose up
 
 Generate coverage reports via `pytest`
 ```bash
-pytest --cov=./ --cov-report=xml
+pytest --codecov=./ --codecov-report=xml
 ```
 
 Uploading reports to Codecov
